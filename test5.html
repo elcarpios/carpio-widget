@@ -68,7 +68,7 @@ document.getElementById('share').addEventListener('click', async () => {
           files: files
         }).then(() => {
         output.textContent = 'Shared!'
-      }))
+      }).catch(error => (output.textContent = error));
       
     } catch (error) {
       output.textContent = `Error: ${error.message}`
