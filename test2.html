@@ -62,8 +62,7 @@ document.getElementById('share').addEventListener('click', async () => {
     return
   }
 
-  if (navigator.canShare()) {
-    try {
+  try {
       await navigator.share({
         title: 'Images'
       })
@@ -71,9 +70,6 @@ document.getElementById('share').addEventListener('click', async () => {
     } catch (error) {
       output.textContent = `Error: ${error.message}`
     }
-  } else {
-    output.textContent = `Your system doesn't support sharing these files.`
-  }
 })
             </script>
         
