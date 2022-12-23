@@ -63,10 +63,13 @@ document.getElementById('share').addEventListener('click', async () => {
   }
 
   try {
-      await navigator.share({
-        title: 'Images'
-      })
-      output.textContent = 'Shared!'
+      window.navigator.share({
+          text: 'Hey! Look on what I have caught!',
+          files: files
+        }).then(() => {
+        output.textContent = 'Shared!'
+      }))
+      
     } catch (error) {
       output.textContent = `Error: ${error.message}`
     }
